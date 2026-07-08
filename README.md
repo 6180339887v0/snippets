@@ -4,11 +4,12 @@
 
 ---
 ## 文件说明
-* `!txt.js`：支持 `!txt` 功能。  
-* `!txt+https.js`：支持 `!txt` + `https` 功能，此 https 为完全体。  
-* `snippets.js`：支持 `!txt` + `socks5` + `http` + `https` + `sstp` + `turn` 功能，此 https 非完全体。  
-* `*_ss.js`：为 shadowsocks 版，不带 _ss 尾标为 vless 版。  
-* `worker.js`：支持 vless/trojan/shadowsocks 三协议，及所有落地功能。worker 更推荐CM佬的 [edgetunnel](https://github.com/cmliu/edgetunnel)，方便易用。  
+* `snippet.js`：vless/trojan/shadowsocks 三协议，支持 `!txt` + `socks5` + `http` + `https` + `sstp` + `turn` 功能，此 https 非完全体。  
+* `worker.js`：vless/trojan/shadowsocks 三协议，支持 `!txt` + `socks5` + `http` + `https` + `sstp` + `turn` 功能，此 https 为完全体。  
+* `!txt+https.js`：vless 单协议，支持 `!txt` + `https` 功能，此 https 为完全体。  
+* `!txt+https_ss.js`：shadowsocks 单协议，支持 `!txt` + `https` 功能，此 https 为完全体。  
+
+_注：ss 建议用 notls。_  
 
 ---
 ## 功能说明
@@ -56,4 +57,4 @@ ss://YWVzLTEyOC1nY206cGFzc3dvcmQ=@www.shopify.com:80/?plugin=v2ray-plugin%3Bmode
 
 ---
 ## 鸣谢
-**[老王](https://github.com/eooce/Cloudflare-proxy/blob/main/snippets.js)、[CM](https://github.com/cmliu/edgetunnel)、[AK](https://t.me/Enkelte_notif)、AI**
+**[老王](https://github.com/eooce/Cloudflare-proxy/blob/main/snippets.js)、[CM](https://github.com/cmliu/edgetunnel)、[AK](https://github.com/ToiCF)、AI**
