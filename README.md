@@ -13,7 +13,7 @@ _注：ss 建议用 notls。_
 
 ---
 ## 功能说明
-1. **!txt**：通过标记 `!txt` 支持采用 TXT 记录的反代域名、https等协议代理域名，比如CM群里的威廉的反代域名 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)、https://https.example.com!txt  
+1. **!txt**：通过标记 `!txt` 支持采用 TXT 记录的反代域名、https等协议代理域名，比如威廉维护的反代域名 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)、https://https.example.com!txt  
 2. **socks**：略  
 3. **http**：略  
 4. **https**：完全体支持 `https://host:port` 和 `https://ip:port!ip`，非完全体仅支持 `https://host:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
@@ -27,27 +27,30 @@ _注：ss 建议用 notls。_
 **路径示例：**
 ```
 1. !txt：
-/?ed=2560&fdip=*.william.us.ci!txt
-/?ed=2560&fdip={any}://https.example.com!txt
+/fdip=*.william.us.ci!txt?ed=2560
+/fdip={any}://https.example.com!txt?ed=2560
 2. socks：
-/?ed=2560&fdip=socks5://host:port
+/fdip=socks5://host:port?ed=2560
 3. http：
-/?ed=2560&fdip=http://host:port
+/fdip=http://host:port?ed=2560
 4. https：
-/?ed=2560&fdip=https://domain:port
-/?ed=2560&fdip=https://ip:port!ip
+/fdip=https://domain:port?ed=2560
+/fdip=https://ip:port!ip?ed=2560
 5. sstp：
-/?ed=2560&fdip=sstp://host:port
+/fdip=sstp://host:port?ed=2560
 6. turn：
-/?ed=2560&fdip=turn://host:port
+/fdip=turn://host:port?ed=2560
 7. global:
-/?ed=2560&fdip={落地}&global=0
+/fdip={落地}?global=0&ed=2560
 ```
+_注意：ed=2560 放在最后_
 **节点示例：**
 ```
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2F%3Fed%3D2560%26fdip%3Dhttps%3A%2F%2F1.2.3.4%3A443%21ip&security=tls&encryption=none&insecure=0&host=https.snippets.cf&fp=random&type=ws&allowInsecure=0&sni=https.snippets.cf#https
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dhttps%3A%2F%2F1.2.3.4%3A443%21ip%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=https.snippets.cf&fp=random&type=ws&allowInsecure=0&sni=https.snippets.cf#https
 
-ss://YWVzLTEyOC1nY206cGFzc3dvcmQ=@www.shopify.com:80/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dnotls.snippets.cf%3Bpath%3D%2F%3Fed%3D2560%26fdip%3Dproxyip.example.com#notls
+trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dsstp%3A%2F%2Fsstp.example.com%21txt%3Fed%3D2560&security=tls&insecure=0&host=trojan.snippet.cf&fp=chrome&type=ws&allowInsecure=0&sni=trojan.snippet.cf#sstp%21txt
+
+ss://YWVzLTEyOC1nY206cGFzc3dvcmQ=@www.shopify.com:80/?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dnotls.snippets.cf%3Bpath%3D%2Ffdip%3Dproxyip.example.com%3Fed%3D2560#notls
 ```
 
 ---
