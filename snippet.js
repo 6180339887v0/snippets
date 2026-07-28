@@ -1,6 +1,6 @@
 import { connect } from 'cloudflare:sockets';
 
-const v1 = 'tw.william.us.ci!txt', v2 = '495c7195-85b8-498a-bf20-2ea9ce9175b5';
+const v1 = 'proxyip.example.com!txt', v2 = '495c7195-85b8-498a-bf20-2ea9ce9175b5';
 
 const CFG={pw:v2,chunk:64*1024,dnPack:32*1024,dnTail:512,dnMs:0,dnQr:4,upPack:16*1024,upQMax:256*1024,maxED:8*1024,concur:1};
 const c_map=new Map,c_run=new Map,c_max=400,c_ttl=18e4;

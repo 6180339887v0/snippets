@@ -14,7 +14,7 @@ _注2：concur取值：pro计划取1（默认），business计划可取2。_
 
 ---
 ## 功能说明
-1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的反代域名 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)、https.example.com!txt  
+1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理。  
 2. **socks**：略  
 3. **http**：略  
 4. **https**：完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 !ip 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
@@ -57,7 +57,7 @@ trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3
 ```
 **SS(notls)**
 ```
-ss://YWVzLTEyOC1nY206bWltYTIzMzM@cmin2.pjq.cc.cd:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dsnippets.example.cf%3Bpath%3D%2Ffdip%3Dtw.william.us.ci%21txt%3Fenc%3Daes-128-gcm%26ed%3D2560%3Bmux%3D0#ss_notls
+ss://YWVzLTEyOC1nY206bWltYTIzMzM@cmin2.pjq.cc.cd:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dsnippets.example.cf%3Bpath%3D%2Ffdip%3Dproxyip.example.com%21txt%3Fenc%3Daes-128-gcm%26ed%3D2560%3Bmux%3D0#ss_notls
 ```
 
 ---
