@@ -5,57 +5,58 @@
 
 ---
 ## 文件说明
-* **snippet.js**：vless/trojan/shadowsocks 三协议，支持 `!txt` + `socks5` + `http` + `https` + `sstp` + `turn` 功能，此 https 非完全体。  
-* **worker.js**：vless/trojan/shadowsocks 三协议，支持 `!txt` + `socks5` + `http` + `https` + `sstp` + `turn` 功能，此 https 为完全体。  
-* **!txt+https.js**：vless 单协议，支持 `!txt` + `https` 功能，此 https 为完全体。  
+* **snippet.js**：vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 非完全体。  
+* **worker.js**：vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 为完全体。  
+* **!txt+https.js**：vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _注1：ss 建议用 notls。_  
 _注2：concur取值：pro计划取1（默认），business计划可取2。_  
 
 ---
 ## 功能说明
-1. **!txt**：通过标记 `!txt` 支持采用 TXT 记录的反代域名、https等协议代理域名，比如威廉维护的反代域名 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)、https://https.example.com!txt  
+1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的反代域名 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)、https.example.com!txt  
 2. **socks**：略  
 3. **http**：略  
-4. **https**：完全体支持 `https://domain:port` 和 `https://ip:port!ip`，ip 直接走 TlsClient，带 !ip 标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
+4. **https**：完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 !ip 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
 5. **sstp**：小日子大学的个人志愿者公益家宽，见 [AK说明](https://t.me/Enkelte_notif/819)  
 6. **turn**：见 [AK说明](https://t.me/Enkelte_notif/805)  
-7. **global**：协议代理（socks5等）默认全局模式，?global=0 时改用回落模式。  
+7. **global**：协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
 
-**总结**：这些功能解决的是CF节点的落地问题，可以实现**无限家宽全球落地**。  
-**另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个反代 ip:port 或协议代理如 sstp://host:port 使用。  
+**总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
+**另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
 
-**路径示例：**
+### 路径示例：
 ```
 1. !txt：
-/fdip=*.william.us.ci!txt?ed=2560
-/fdip={any}://https.example.com!txt?ed=2560
+/fdip=domain!txt?ed=2560
 2. socks：
 /fdip=socks5://host:port?ed=2560
 3. http：
 /fdip=http://host:port?ed=2560
 4. https：
 /fdip=https://domain:port?ed=2560
-/fdip=https://domain:port!ip?ed=2560
 /fdip=https://ip:port?ed=2560
+/fdip=https://host:port!ip?ed=2560
 5. sstp：
 /fdip=sstp://host:port?ed=2560
 6. turn：
 /fdip=turn://host:port?ed=2560
 7. global:
-/fdip={23456}?global=0&ed=2560
+/fdip={123456}?global=1&ed=2560
 ```
 _注意：ed=2560 放在最后_  
 
-**节点示例：**
-
-```vless
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dhttps%3A%2F%2F1.2.3.4%3A443%21ip%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=https.snippets.cf&fp=random&type=ws&allowInsecure=0&sni=https.snippets.cf#https
+### 节点示例：
+**Vless**
 ```
-```trojan
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dhttps%3A%2F%2F1.2.3.4%3A443%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=https.snippets.cf&fp=random&type=ws&allowInsecure=0&sni=https.snippets.cf#https
+```
+**Trojan**
+```
 trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dsstp%3A%2F%2Fsstp.example.com%21txt%3Fed%3D2560&security=tls&insecure=0&host=trojan.snippet.cf&fp=chrome&type=ws&allowInsecure=0&sni=trojan.snippet.cf#sstp%21txt
 ```
-```ss(notls)
+**SS(notls)**
+```
 ss://YWVzLTEyOC1nY206bWltYTIzMzM@cmin2.pjq.cc.cd:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dsnippets.example.cf%3Bpath%3D%2Ffdip%3Dtw.william.us.ci%21txt%3Fenc%3Daes-128-gcm%26ed%3D2560%3Bmux%3D0#ss_notls
 ```
 
@@ -66,4 +67,4 @@ ss://YWVzLTEyOC1nY206bWltYTIzMzM@cmin2.pjq.cc.cd:80?plugin=v2ray-plugin%3Bmode%3
 
 ---
 ## 鸣谢
-**[老王](https://github.com/eooce/Cloudflare-proxy)、[CM](https://github.com/cmliu/edgetunnel)、[AK](https://github.com/ToiCF)、AI**
+**[AK](https://github.com/ToiCF)、AI**
