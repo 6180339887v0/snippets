@@ -9,12 +9,11 @@
 * **worker.js**：vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 为完全体。  
 * **!txt+https.js**：vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
-_注1：ss 建议用 notls。_  
-_注2：concur取值：pro计划取1（默认），business计划可取2。_  
+_建议：ss 用 notls。_  
 
 ---
 ## 功能说明
-1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理。  
+1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)（点击跳转获取）。  
 2. **socks**：略  
 3. **http**：略  
 4. **https**：完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 !ip 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
@@ -44,26 +43,27 @@ _注2：concur取值：pro计划取1（默认），business计划可取2。_
 7. global:
 /fdip={123456}?global=1&ed=2560
 ```
-_注意：ed=2560 放在最后_  
+_注1：ed=2560 放在最后_  
+_注2：fdip 可以改为任意数字字母组合如 proxyip_  
 
 ### 节点示例：
 **Vless**
 ```
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dhttps%3A%2F%2F1.2.3.4%3A443%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=https.snippets.cf&fp=random&type=ws&allowInsecure=0&sni=https.snippets.cf#https
+vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=vless.snippets.cf&fp=chrome&type=ws&allowInsecure=0&sni=vless.snippets.cf#snippet
 ```
 **Trojan**
 ```
-trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3Dsstp%3A%2F%2Fsstp.example.com%21txt%3Fed%3D2560&security=tls&insecure=0&host=trojan.snippet.cf&fp=chrome&type=ws&allowInsecure=0&sni=trojan.snippet.cf#sstp%21txt
+trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3D1.2.3.4.%3A443%3Fed%3D2560&security=tls&insecure=0&host=trojan.snippet.cf&fp=chrome&type=ws&allowInsecure=0&sni=trojan.snippet.cf#snippet
 ```
 **SS(notls)**
 ```
-ss://YWVzLTEyOC1nY206bWltYTIzMzM@cmin2.pjq.cc.cd:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dsnippets.example.cf%3Bpath%3D%2Ffdip%3Dproxyip.example.com%21txt%3Fenc%3Daes-128-gcm%26ed%3D2560%3Bmux%3D0#ss_notls
+ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopify.com:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.snippets.cf%3Bpath%3D%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560%3Bmux%3D0#snippet
 ```
 
 ---
 ## 特别提醒
 **若1101请全删旧片段再部署，已有正常运行中的片段需谨慎，部署新片段会触发全部片段代码检测。**  
-**有问题请开 issue 或联系 [tg bot](https://t.me/meindmBot) 直奔主题**  
+**有问题请开 issue 或联系 [tg bot](https://t.me/meindmBot) 直奔主题，欢迎反馈，观迎PR**  
 
 ---
 ## 鸣谢
