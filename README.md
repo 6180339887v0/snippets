@@ -1,52 +1,52 @@
 ## 前排劝退
+**不当客服，不做基础指导，不会用的同学建议用其他人的更方便的代码。CF代理基础知识建议到CM佬群学习。**  
 **无前端，无订阅，专注代理本身：极致直连 + 多落地协议。**  
 **订阅功能可自行搭配 [EDT](https://github.com/cmliu/edgetunnel) 或订阅器实现。**  
 **仅适合对CF节点有一定基础的同学，至少得会用节点模板修改节点信息。**  
 
 ---
 ## 文件说明
-* **snippet.js**：vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 非完全体。  
-* **worker.js**：vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 为完全体。  
-* **!txt+https.js**：vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
+* **snippet.js：** vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 非完全体。  
+* **worker.js：** vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 为完全体。  
+* **!txt+https.js：** vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _建议：ss 用 notls。_  
 
 ---
 ## 功能说明
-1. **!txt**：通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)（点击跳转获取）。  
-2. **socks**：略  
-3. **http**：略  
-4. **https**：完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 !ip 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
-5. **sstp**：小日子大学的个人志愿者公益家宽，见 [AK说明](https://t.me/Enkelte_notif/819)  
-6. **turn**：见 [AK说明](https://t.me/Enkelte_notif/805)  
-7. **global**：协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
+1. **!txt：** 通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)（点击跳转获取）。  
+2. **socks：** 略  
+3. **http：** 略  
+4. **https：** 完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 `!ip` 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
+5. **sstp：** 小日子大学的个人志愿者公益家宽，见 [AK说明](https://t.me/Enkelte_notif/819)  
+6. **turn：** 见 [AK说明](https://t.me/Enkelte_notif/805)  
+7. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
 
 **总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
 **另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
 
-### 路径示例：
-```
-1. !txt：
-/fdip=domain!txt?ed=2560
-2. socks：
-/fdip=socks5://host:port?ed=2560
-3. http：
-/fdip=http://host:port?ed=2560
-4. https：
-/fdip=https://domain:port?ed=2560
-/fdip=https://ip:port?ed=2560
-/fdip=https://host:port!ip?ed=2560
-5. sstp：
-/fdip=sstp://host:port?ed=2560
-6. turn：
-/fdip=turn://host:port?ed=2560
-7. global:
-/fdip={123456}?global=1&ed=2560
-```
+### 路径示例
+1. **!txt：**  
+`/fdip=domain!txt?ed=2560`
+2. **socks：**  
+`/fdip=socks5://host:port?ed=2560`
+3. **http：**  
+`/fdip=http://host:port?ed=2560`
+4. **https：**  
+`/fdip=https://domain:port?ed=2560`
+`/fdip=https://ip:port?ed=2560`
+`/fdip=https://host:port!ip?ed=2560`
+5. **sstp：**  
+`/fdip=sstp://host:port?ed=2560`
+6. **turn：**  
+`/fdip=turn://host:port?ed=2560`
+7. **global：**  
+`/fdip={123456}?global=1&ed=2560`
+
 _注1：ed=2560 放在最后_  
 _注2：fdip 可以改为任意数字字母组合如 proxyip_  
 
-### 节点示例：
+### 节点示例
 **Vless**
 ```
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=vless.snippets.cf&fp=chrome&type=ws&allowInsecure=0&sni=vless.snippets.cf#snippet
@@ -63,7 +63,7 @@ ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopif
 ---
 ## 特别提醒
 **若1101请全删旧片段再部署，已有正常运行中的片段需谨慎，部署新片段会触发全部片段代码检测。**  
-**有问题请开 issue 或联系 [tg bot](https://t.me/meindmBot) 直奔主题，欢迎反馈，观迎PR**  
+**有问题请开 issue 或联系 [tg bot](https://t.me/meindmBot) 直奔主题，欢迎反馈，欢迎 PR。**  
 
 ---
 ## 鸣谢
