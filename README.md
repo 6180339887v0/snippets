@@ -1,5 +1,5 @@
 ## 前排劝退
-**不当客服，不做基础指导，不会用的同学建议用其他人的更方便的代码。CF代理基础知识建议到CM佬群学习。**  
+**不回答“怎么用”这种问题，建议用其他人方便易用的代码。CF代理基础知识建议到CM佬群学习。**  
 **无前端，无订阅，专注代理本身：极致直连 + 多落地协议。**  
 **订阅功能可自行搭配 [EDT](https://github.com/cmliu/edgetunnel) 或订阅器实现。**  
 **仅适合对CF节点有一定基础的同学，至少得会用节点模板修改节点信息。**  
@@ -14,7 +14,7 @@ _建议：ss 用 notls。_
 
 ---
 ## 功能说明
-1. **!txt：** 通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)（点击跳转获取）。  
+1. **!txt：** 通过后缀标记 `!txt` 支持采用 TXT 记录的域名，TXT 记录值为 proxyip 或 socks5 等协议代理，比如威廉维护的 [*.william.us.ci!txt](https://t.me/CMLiussss_channel/84)（点击跳转获取）。普通 A 记录的并不需要加 !txt，如 CM佬的。  
 2. **socks：** 略  
 3. **http：** 略  
 4. **https：** 完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 `!ip` 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
