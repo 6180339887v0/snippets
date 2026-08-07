@@ -21,6 +21,7 @@ _建议：ss 用 notls。_
 5. **sstp：** 小日子大学的个人志愿者公益家宽，见 [AK说明](https://t.me/Enkelte_notif/819)  
 6. **turn：** 见 [AK说明](https://t.me/Enkelte_notif/805)  
 7. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
+8. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip。  
 
 **总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
 **另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
@@ -42,6 +43,8 @@ _建议：ss 用 notls。_
 `/fdip=turn://host:port?ed=2560`
 7. **global：**  
 `/fdip={123456}?global=1&ed=2560`
+8. **colo：**  
+`/?colo=1&ed=2560`
 
 _注1：ed=2560 放在最后_  
 _注2：fdip 可以改为任意数字字母组合如 proxyip_  
@@ -67,4 +70,4 @@ ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopif
 
 ---
 ## 鸣谢
-**[AK](https://github.com/ToiCF)、AI**
+**[AK](https://github.com/ToiCF)、[CM](https://github.com/cmliu)、AI**
