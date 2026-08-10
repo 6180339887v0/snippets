@@ -7,7 +7,7 @@
 ---
 ## 文件说明
 * **snippet.js：** vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 非完全体。  
-* **worker.js：** vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 为完全体。  
+* **worker.js：** vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https 为完全体。  
 * **!txt+https.js：** vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _建议：ss 用 notls。_  
@@ -20,8 +20,9 @@ _建议：ss 用 notls。_
 4. **https：** 完全体支持 `https://domain:port` 和 `https://ip:port`，ip 直接走 TlsClient，带 `!ip` 后缀标记强制走 TlsClient；非完全体仅支持 `https://domain:port`，见 [AK说明](https://t.me/Enkelte_notif/817)  
 5. **sstp：** 小日子大学的个人志愿者公益家宽，见 [AK说明](https://t.me/Enkelte_notif/819)  
 6. **turn：** 见 [AK说明](https://t.me/Enkelte_notif/805)  
-7. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
-8. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip。  
+7. **turns：** turn over tls，与 https 代理情况类似。  
+8. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
+9. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip，path > colo > v1。  
 
 **总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
 **另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
@@ -41,9 +42,13 @@ _建议：ss 用 notls。_
 `/fdip=sstp://host:port?ed=2560`
 6. **turn：**  
 `/fdip=turn://host:port?ed=2560`
-7. **global：**  
-`/fdip={123456}?global=1&ed=2560`
-8. **colo：**  
+7. **turns：**  
+`/fdip=turns://domain:port?ed=2560`
+`/fdip=turns://ip:port?ed=2560`
+`/fdip=turns://host:port!ip?ed=2560`
+8. **global：**  
+`/fdip={1234567}?global=1&ed=2560`
+9. **colo：**  
 `/?colo=1&ed=2560`
 
 _注1：ed=2560 放在最后_  
