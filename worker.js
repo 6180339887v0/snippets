@@ -1,6 +1,6 @@
 import{connect as t}from"cloudflare:sockets";
 
-const n="proxyip.example.com!txt",r="495c7195-85b8-498a-bf20-2ea9ce9175b5",a={chunk:65536,dnPack:65536,dnTail:1024,dnMs:1,dnQr:0,upPack:32768,upQMax:1048576,upNMax:256,maxED:8192,hsMax:16384,connMs:1600,xhInit:8192,xhNext:4096},s={"Content-Type":"application/octet-stream","Cache-Control":"no-store, no-transform","X-Accel-Buffering":"no","grpc-status":"0"},i=new Map,o=new Map;
+const n="proxyip.example.com!txt",r="495c7195-85b8-498a-bf20-2ea9ce9175b5",a={chunk:65536,dnPack:131072,dnTail:2048,dnMs:1,dnQr:0,upPack:65536,upQMax:2097152,upNMax:256,maxED:8192,hsMax:16384,connMs:2000,xhInit:8192,xhNext:4096},s={"Content-Type":"application/octet-stream","Cache-Control":"no-store, no-transform","X-Accel-Buffering":"no","grpc-status":"0"},i=new Map,o=new Map;
 
 let c=null,l=null,h=null,u=null,w=null;
 const f=/^(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)$/,y=/^\[?([a-fA-F0-9:]+)\]?$/,p=new Uint8Array(0),d=new TextDecoder,g=new TextEncoder,b=new Uint8Array([33,18,164,66]),m=new Uint8Array(20),A=g.encode("ss-subkey"),k=t=>15&(t>64?t+9:t),U=new Uint8Array(16);

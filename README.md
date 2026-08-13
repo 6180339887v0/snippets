@@ -22,7 +22,7 @@ _建议：ss 用 notls。_
 6. **turn：** 见 [AK说明](https://t.me/Enkelte_notif/805)  
 7. **turns：** turn over tls，与 https 代理情况类似。  
 8. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
-9. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip，path > colo > v1。  
+9. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip，path > colo > v1（n）。  
 
 **总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
 **另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
