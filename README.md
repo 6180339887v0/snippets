@@ -11,6 +11,9 @@
 * **!txt+https.js：** vless 单协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _建议：ss 用 notls。_  
+_注1：ss 单 ws，无 xhttp。_  
+_注2：据说5片段免费 snippet 用不了 xhttp，没有，无从测试，自测。_  
+_注3：代码验证基于 Pro计划 snippet，worker free。_  
 
 ---
 ## 功能说明
@@ -71,7 +74,7 @@ trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?mode=stream-on
 ```
 **SS(notls)**
 ```ws
-ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopify.com:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.snippets.cf%3Bpath%3D%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560%3Bmux%3D0#snippet
+ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopify.com:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.snippets.cf%3Bpath%3D%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560%3Bmux%3D0#ws
 ```
 
 ---
