@@ -58,24 +58,45 @@ _注1：ed=2560 放在最后_
 _注2：fdip 可以改为任意数字字母组合如 proxyip_  
 
 ### 节点示例
-**Vless**
+**Vless ws/xhttp**
 ```ws
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=vless.snippets.cf&fp=chrome&type=ws&allowInsecure=0&sni=vless.snippets.cf#ws
 ```
 ```xhttp
 vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?mode=stream-one&path=%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560&security=tls&alpn=h2&encryption=none&insecure=0&host=vless.snippets.cf&fp=chrome&type=xhttp&allowInsecure=0&sni=vless.snippets.cf#xhttp
 ```
-**Trojan**
+**Trojan ws/xhttp**
 ```ws
 trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?path=%2Ffdip%3D1.2.3.4.%3A443%3Fed%3D2560&security=tls&insecure=0&host=trojan.snippet.cf&fp=chrome&type=ws&allowInsecure=0&sni=trojan.snippet.cf#ws
 ```
 ```xhttp
 trojan://495c7195-85b8-498a-bf20-2ea9ce9175b5@www.shopify.com:443?mode=stream-one&path=%2Ffdip%3D1.2.3.4.%3A443%3Fed%3D2560&security=tls&alpn=h2&insecure=0&host=trojan.snippet.cf&fp=chrome&type=xhttp&allowInsecure=0&sni=trojan.snippet.cf#xhttp
 ```
-**SS(notls)**
+**SS(notls) ws**
 ```ws
 ss://YWVzLTEyOC1nY206NDk1YzcxOTUtODViOC00OThhLWJmMjAtMmVhOWNlOTE3NWI1@www.shopify.com:80?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.snippets.cf%3Bpath%3D%2Ffdip%3D1.2.3.4%3A443%3Fed%3D2560%3Bmux%3D0#ws
 ```
+<details>
+<summary>xhttp extra</summary>
+留空 或 填入以下内容 或 自行配置，效果自测。  
+
+```json
+{
+"extra": {
+  "noGRPCHeader": true,
+  "headers": {
+    "Content-Type": "application/octet-stream"
+  },
+  "xPaddingBytes": "100-1000",
+  "xPaddingObfsMode": true,
+  "xPaddingMethod": "tokenish",
+  "xPaddingPlacement": "queryInHeader",
+  "xPaddingHeader": "X-Cache",
+  "xPaddingKey": "_dc"
+}
+}
+```
+</details>
 
 ---
 ## 特别提醒
