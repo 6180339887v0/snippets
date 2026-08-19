@@ -6,8 +6,8 @@
 
 ---
 ## 文件说明
-* **snippet.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn` 功能，此 https 非完全体。  
-* **worker.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https 为完全体。  
+* **snippet.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https/turns 非完全体。  
+* **worker.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https/turns 为完全体。  
 * **!txt+https.js：** ws/xhttp 双传输，vless/ss 双协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _建议：ss 用 notls。_  
@@ -26,9 +26,11 @@ _注3：代码验证基于 Pro计划 snippet，worker free。_
 7. **turns：** turn over tls，与 https 代理情况类似。  
 8. **global：** 协议代理（socks5等）默认回落模式，?global=1 时改用全局模式。  
 9. **colo：** CM佬的自适应反代服务，自动根据当前位置分配 proxyip，path > colo > n。  
+10. **!cf：** “cf官方反代”带 `!cf` 后缀标记时，若使用香港优选IP，反代不会自动落到香港，而是会落到CM佬的自动分配服务，避开香港 AI 限制。  
 
-**总结**：这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
-**另注**：TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
+**总结：** 这些功能解决的是CF节点的落地问题，助力实现**无限家宽全球落地**。  
+**注1：** TXT 内容格式以 `,` 分隔或换行或两者混用。作用逻辑：获取域名 TXT 记录内容，取其中某个 proxyip 或协议代理使用。  
+**注2：** “cf官方反代”指可访问cf cdn内容的cf官方IP，落地跟随优选IP位置。  
 
 ### 路径示例
 1. **!txt：**  
@@ -53,6 +55,8 @@ _注3：代码验证基于 Pro计划 snippet，worker free。_
 `/fdip={1234567}?global=1&ed=2560`
 9. **colo：**  
 `/?colo=1&ed=2560`
+10. **!cf：**  
+`/fdip=172.71.4.58:443!cf?ed=2560`
 
 _注1：ed=2560 放在最后_  
 _注2：fdip 可以改为任意数字字母组合如 proxyip_  
