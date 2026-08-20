@@ -6,9 +6,9 @@
 
 ---
 ## 文件说明
-* **snippet.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns + !cf` 功能，此 https/turns 非完全体。  
-* **worker.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns + !cf` 功能，此 https/turns 为完全体。  
-* **!txt+https.js：** ws/xhttp 双传输，vless/ss 双协议，支持 `!txt + https + !cf` 功能，此 https 为完全体。  
+* **snippet.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https/turns 非完全体。  
+* **worker.js：** ws/xhttp 双传输，vless/trojan/ss 三协议，支持 `!txt + socks5 + http + https + sstp + turn + turns` 功能，此 https/turns 为完全体。  
+* **!txt+https.js：** ws/xhttp 双传输，vless/ss 双协议，支持 `!txt + https` 功能，此 https 为完全体。  
 
 _建议：ss 用 notls。_  
 _注1：ss 单 ws，无 xhttp。_  
@@ -33,28 +33,28 @@ _注3：代码验证基于 Pro计划 snippet，worker free。_
 
 ### 路径示例
 1. **!txt：**  
-`/fdip=domain!txt?ed=2560`
+`/fdip=domain!txt?ed=2560`  
 2. **socks：**  
-`/fdip=socks5://host:port?ed=2560`
+`/fdip=socks5://host:port?ed=2560`  
 3. **http：**  
-`/fdip=http://host:port?ed=2560`
+`/fdip=http://host:port?ed=2560`  
 4. **https：**  
-`/fdip=https://domain:port?ed=2560`
-`/fdip=https://ip:port?ed=2560`
-`/fdip=https://host:port!ip?ed=2560`
+`/fdip=https://domain:port?ed=2560`  
+`/fdip=https://ip:port?ed=2560`  
+`/fdip=https://host:port!ip?ed=2560`  
 5. **sstp：**  
-`/fdip=sstp://host:port?ed=2560`
+`/fdip=sstp://host:port?ed=2560`  
 6. **turn：**  
-`/fdip=turn://host:port?ed=2560`
+`/fdip=turn://host:port?ed=2560`  
 7. **turns：**  
-`/fdip=turns://domain:port?ed=2560`
-`/fdip=turns://ip:port?ed=2560`
-`/fdip=turns://host:port!ip?ed=2560`
+`/fdip=turns://domain:port?ed=2560`  
+`/fdip=turns://ip:port?ed=2560`  
+`/fdip=turns://host:port!ip?ed=2560`  
 8. **global：**  
-`/fdip={1234567}?global=1&ed=2560`
+`/fdip={1234567}?global=1&ed=2560`  
 9. **colo：**  
-`/?auto=cm&ed=2560`
-`/?auto=zj&ed=2560`
+`/?auto=cm&ed=2560`  
+`/?auto=zj&ed=2560`  
 
 _注1：ed=2560 放在最后_  
 _注2：fdip 可以改为任意数字字母组合如 proxyip_  
